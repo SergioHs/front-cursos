@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { AuthProvider } from '@/contexts/AuthContext';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -29,7 +30,9 @@ export default function RootLayout({
             </menu>
           </header>
           <div className="layout-guide flex-1">
-            {children}
+            <AuthProvider>
+              {children}
+            </AuthProvider>
           </div>
           <footer className="bg-indigo-800">
             <p className="p-4 text-center text-white text-sm">A plataforma Baslet faz parte de um projeto criado para fins didaticos para a disciplina de Backend Node.js com SQL no Instituto INFnet.</p>

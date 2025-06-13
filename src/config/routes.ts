@@ -1,5 +1,5 @@
 export default {
-    'root': '#', //Rota da API
+    'root': 'http://localhost:3000', //Rota da API
     'criar-usuario': () => '/usuarios', //url de criar usuários
     'login': () => '/login', //url de login
     'listar-cursos': ( filtro ?: any ) => '/cursos' + filtro ? '?' + new URLSearchParams(filtro).toString() : '', //url de listar cursos
